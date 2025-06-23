@@ -243,7 +243,7 @@ public class AppleIdentityProvider extends OIDCIdentityProvider implements Socia
         jwt.audience(ISSUER);
         jwt.iat((long) Time.currentTime());
         jwt.exp(jwt.getIat() + 86400 * 180);
-        logger.warn("generateClientToken=" + jwt);
+        logger.warn("generateClientToken iat=" + jwt.getIat() + ",exp=" + jwt.getExp());
         return jwt;
     }
 
